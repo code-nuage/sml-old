@@ -1,5 +1,6 @@
 #include "lexer.h"
 
+#include <errno.h>
 #include <ctype.h>
 #include <math.h>
 #include <stddef.h>
@@ -116,17 +117,19 @@ sml_token lexer_next_token(sml_lexer *l) {
 void lexer_lex(sml_lexer *l, char *content) {
     l->content = content;
 
-    int tokens_capacity = 16;
-    l->tokens = malloc(sizeof(sml_token) * tokens_capacity);
+    l->capacity = 16;
+    l->tokens = malloc(sizeof(sml_token) * l->capacity);
+    if (!l->tokens) { sml_error(0, 0, FG_RED "<Fatal error> Memory allocation failed", ENOMEM); };
 
     sml_token t = {};
 
     do {
         t = lexer_next_token(l);
 
-        if (l->count >= tokens_capacity) {
-            tokens_capacity *= 2;
-            l->tokens = realloc(l->tokens, sizeof(sml_token) * tokens_capacity);
+        if (l->count >= l->capacity) {
+            l->capacity *= 2;
+            l->tokens = realloc(l->tokens, sizeof(sml_token) * l->capacity);
+            if (!l->tokens) { sml_error(0, 0, FG_RED "<Fatal error> Memory allocation failed", ENOMEM); };
         }
 
         l->tokens[l->count] = t;
