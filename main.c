@@ -3,10 +3,12 @@
 #include <string.h>
 
 #include "error/error.h"
+#include "eval/eval.h"
 #include "token/token.h"
 #include "lexer/lexer.h"
 #include "node/node.h"
 #include "parser/parser.h"
+#include "eval/eval.h"
 
 int main(int argc, char **argv) {
     printf("sml-dev # somemicrolanguage\nMIT License Copyright 2026 code-nuage\n\n");
@@ -30,6 +32,13 @@ int main(int argc, char **argv) {
 
             for (int i = 0; i < p.count; i++) {
                 node_print(p.statements[i]);
+            }
+
+            sml_eval e = eval_new();
+            eval_evaluate(&e, p.statements, p.count);
+
+            for (size_t i = 0; i < e.count; i++) {
+                printf("%f\n", e.results[i]);
             }
         }
 
