@@ -1,6 +1,8 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include <stdlib.h>
+
 #include "../node/node.h"
 
 typedef struct sml_ast_parser {
@@ -9,8 +11,8 @@ typedef struct sml_ast_parser {
     int pos;
 
     sml_ast_node **statements;
-    int count;
-    int capacity;
+    size_t count;
+    size_t capacity;
 } sml_ast_parser;
 
 sml_ast_parser parser_new();

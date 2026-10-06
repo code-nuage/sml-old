@@ -1,6 +1,8 @@
 #ifndef LEXER_H
 #define LEXER_H
 
+#include <stdlib.h>
+
 #include "../token/token.h"
 
 typedef struct sml_lexer {
@@ -12,8 +14,8 @@ typedef struct sml_lexer {
     int pos;
 
     sml_token *tokens;
-    int count;
-    int capacity;
+    size_t count;
+    size_t capacity;
 } sml_lexer;
 
 sml_lexer lexer_new();

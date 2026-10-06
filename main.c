@@ -23,14 +23,14 @@ int main(int argc, char **argv) {
             sml_lexer l = lexer_new();
             lexer_lex(&l, prompt);
 
-            for (int i = 0; i < l.count; i++) {
+            for (size_t i = 0; i < l.count; i++) {
                 token_print(l.tokens[i]);
             }
 
             sml_ast_parser p = parser_new();
             parser_parse(&p, l.tokens);
 
-            for (int i = 0; i < p.count; i++) {
+            for (size_t i = 0; i < p.count; i++) {
                 node_print(p.statements[i]);
             }
 
