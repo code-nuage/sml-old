@@ -25,7 +25,6 @@ char *token_display(sml_token t) {
 
         case T_SEMICOLON:  type = ";"; break;
 
-        case T_EOL:    type = BOLD_BLACK "EOL"; break;
         case T_EOF:    type = BOLD_BLACK "EOF"; break;
 
         case T_UNKNOWN: type = BOLD_RED "Unknown"; break;

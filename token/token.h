@@ -14,7 +14,6 @@ typedef enum sml_token_type {
 
     T_SEMICOLON,
 
-    T_EOL,
     T_EOF,
 
     T_UNKNOWN,

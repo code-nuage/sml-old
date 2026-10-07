@@ -38,6 +38,7 @@ void lexer_advance(sml_lexer *l) {
 
 void lexer_skip_whitespaces(sml_lexer *l) {
     while (lexer_current(l) == ' '
+        || lexer_current(l) == '\n'
         || lexer_current(l) == '\t'
         || lexer_current(l) == '\r') lexer_advance(l);
 }
@@ -101,7 +102,6 @@ sml_token lexer_next_token(sml_lexer *l) {
 
         case ';': lexer_advance(l); t.type = T_SEMICOLON; break;
 
-        case '\n': lexer_advance(l); t.type = T_EOL; break;
         case '\0': t.type = T_EOF; break;
 
         default:
