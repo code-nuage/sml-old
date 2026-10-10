@@ -1,0 +1,60 @@
+#ifndef COLOR_H
+#define COLOR_H
+
+#define RESET "\e[0m"
+
+#define FG_BLACK   "\e[0;30m"
+#define FG_RED     "\e[0;31m"
+#define FG_GREEN   "\e[0;32m"
+#define FG_YELLOW  "\e[0;33m"
+#define FG_BLUE    "\e[0;34m"
+#define FG_MAGENTA "\e[0;35m"
+#define FG_CYAN    "\e[0;36m"
+#define FG_WHITE   "\e[0;37m"
+
+#define BG_BLACK   "\e[0;40m"
+#define BG_RED     "\e[0;41m"
+#define BG_GREEN   "\e[0;42m"
+#define BG_YELLOW  "\e[0;43m"
+#define BG_BLUE    "\e[0;44m"
+#define BG_MAGENTA "\e[0;45m"
+#define BG_CYAN    "\e[0;46m"
+#define BG_WHITE   "\e[0;47m"
+
+#define BOLD_BLACK   "\e[1;30m"
+#define BOLD_RED     "\e[1;31m"
+#define BOLD_GREEN   "\e[1;32m"
+#define BOLD_YELLOW  "\e[1;33m"
+#define BOLD_BLUE    "\e[1;34m"
+#define BOLD_MAGENTA "\e[1;35m"
+#define BOLD_CYAN    "\e[1;36m"
+#define BOLD_WHITE   "\e[1;37m"
+
+#define HIGH_FG_BLACK   "\e[0;90m"
+#define HIGH_FG_RED     "\e[0;91m"
+#define HIGH_FG_GREEN   "\e[0;92m"
+#define HIGH_FG_YELLOW  "\e[0;93m"
+#define HIGH_FG_BLUE    "\e[0;94m"
+#define HIGH_FG_MAGENTA "\e[0;95m"
+#define HIGH_FG_CYAN    "\e[0;96m"
+#define HIGH_FG_WHITE   "\e[0;97m"
+
+#define HIGH_BG_BLACK   "\e[0;100m"
+#define HIGH_BG_RED     "\e[0;101m"
+#define HIGH_BG_GREEN   "\e[0;102m"
+#define HIGH_BG_YELLOW  "\e[0;103m"
+#define HIGH_BG_BLUE    "\e[0;104m"
+#define HIGH_BG_MAGENTA "\e[0;105m"
+#define HIGH_BG_CYAN    "\e[0;106m"
+#define HIGH_BG_WHITE   "\e[0;107m"
+
+#define HIGH_BOLD_BLACK   "\e[1;40m"
+#define HIGH_BOLD_RED     "\e[1;41m"
+#define HIGH_BOLD_GREEN   "\e[1;42m"
+#define HIGH_BOLD_YELLOW  "\e[1;43m"
+#define HIGH_BOLD_BLUE    "\e[1;44m"
+#define HIGH_BOLD_MAGENTA "\e[1;45m"
+#define HIGH_BOLD_CYAN    "\e[1;46m"
+#define HIGH_BOLD_WHITE   "\e[1;47m"
+
+#endif // COLOR_H
